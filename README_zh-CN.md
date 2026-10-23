@@ -11,6 +11,7 @@
   <a href="https://arxiv.org/abs/2610.31329"><img src="https://img.shields.io/badge/Paper-arXiv-EA4335?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-2B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--2B-FBBC04" alt="WeVisOne-VL-2B"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-4B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--4B-FBBC04" alt="WeVisOne-VL-4B"></a>
+  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b"><img src="https://img.shields.io/badge/🎮%20Demo-Gradio-34A853" alt="Demo"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="License"></a>
 </p>
 
@@ -32,13 +33,14 @@
 
 ## 📢 新闻
 
+- **[2026-10]** 🎮 Demo 可以在 https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b 体验了。
 - **[2026-10] 🔥🔥 我们还开源了 WeVisOne-VL 数据引擎中使用的抠图打标模型 [Mask2Alpha](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha)，可将二值掩码转换为高质量的 Alpha Matte！** 请查看 [`mask2alpha`](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha) 分支。
 - **[2026-10]** 🎉 我们发布了技术报告、模型权重（2B 和 4B）、推理工具包、Cookbooks 和评测流程！
 
 ## 📝 TODO
 
 - [x] 推理工具包与 Cookbooks
-- [ ] Gradio 网页 Demo
+- [x] Gradio 网页 Demo
 - [x] Benchmark 评测流程
 - [x] 在 Hugging Face 上发布模型权重（2B 和 4B）
 - [x] 开源抠图打标模型
@@ -246,6 +248,8 @@ save_result("outputs/matting", image, result)
 | 🎭 [像素级流程](tutorials/03_segmentation_matting_pipeline.ipynb) | 分割、抠图 |
 
 ## 🎮 Gradio Demo
+
+在线体验：https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b
 
 在本地启动 Demo：
 
