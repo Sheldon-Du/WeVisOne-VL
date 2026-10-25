@@ -11,7 +11,8 @@
   <a href="https://arxiv.org/abs/2610.31329"><img src="https://img.shields.io/badge/Paper-arXiv-EA4335?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-2B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--2B-FBBC04" alt="WeVisOne-VL-2B"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-4B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--4B-FBBC04" alt="WeVisOne-VL-4B"></a>
-  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b"><img src="https://img.shields.io/badge/🎮%20Demo-Gradio-34A853" alt="Demo"></a>
+  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b"><img src="https://img.shields.io/badge/🎮%20Demo-2B-34A853" alt="2B Demo"></a>
+  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b"><img src="https://img.shields.io/badge/🎮%20Demo-4B-34A853" alt="4B Demo"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="License"></a>
 </p>
 
@@ -33,7 +34,7 @@
 
 ## 📢 新闻
 
-- **[2026-10]** 🎮 Demo 可以在 https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b 体验了。
+- **[2026-10]** 🎮 Demo 可以在线体验了：[2B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b) / [4B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b)。
 - **[2026-10] 🔥🔥 我们还开源了 WeVisOne-VL 数据引擎中使用的抠图打标模型 [Mask2Alpha](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha)，可将二值掩码转换为高质量的 Alpha Matte！** 请查看 [`mask2alpha`](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha) 分支。
 - **[2026-10]** 🎉 我们发布了技术报告、模型权重（2B 和 4B）、推理工具包、Cookbooks 和评测流程！
 
@@ -204,6 +205,7 @@ from wevisone_vl import WeVisOneVL
 from wevisone_vl.visualization import save_result
 
 model = WeVisOneVL("tencent/WeVisOne-VL-4B", backend="transformers")  # 或 backend="vllm"
+# model = WeVisOneVL("tencent/WeVisOne-VL-2B", backend="transformers")  # 使用 2B 时改用此行
 
 # 目标级：开放词汇目标检测
 image = Image.open("demo/examples/images/livingroom.jpg").convert("RGB")
@@ -249,12 +251,14 @@ save_result("outputs/matting", image, result)
 
 ## 🎮 Gradio Demo
 
-在线体验：https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b
+在线体验：[2B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b) / [4B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b)
 
 在本地启动 Demo：
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python demo/app.py --model tencent/WeVisOne-VL-4B
+# 或使用 2B：
+# CUDA_VISIBLE_DEVICES=0 python demo/app.py --model tencent/WeVisOne-VL-2B
 ```
 
 <details>

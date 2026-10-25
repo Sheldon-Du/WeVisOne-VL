@@ -11,7 +11,8 @@
   <a href="https://arxiv.org/abs/2610.31329"><img src="https://img.shields.io/badge/Paper-arXiv-EA4335?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-2B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--2B-FBBC04" alt="WeVisOne-VL-2B"></a>
   <a href="https://huggingface.co/tencent/WeVisOne-VL-4B"><img src="https://img.shields.io/badge/🤗%20Model-WeVisOne--VL--4B-FBBC04" alt="WeVisOne-VL-4B"></a>
-  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b"><img src="https://img.shields.io/badge/🎮%20Demo-Gradio-34A853" alt="Demo"></a>
+  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b"><img src="https://img.shields.io/badge/🎮%20Demo-2B-34A853" alt="2B Demo"></a>
+  <a href="https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b"><img src="https://img.shields.io/badge/🎮%20Demo-4B-34A853" alt="4B Demo"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="License"></a>
 </p>
 
@@ -33,7 +34,7 @@
 
 ## 📢 News
 
-- **[2026-10]** 🎮 The demo is ready to try at https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b.
+- **[2026-10]** 🎮 The demo is ready to try: [2B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b) / [4B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b).
 - **[2026-10] 🔥🔥 We also open-sourced [Mask2Alpha](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha), the matting annotator used in the WeVisOne-VL Data Engine to turn binary masks into high-quality alpha mattes!** Check out the [`mask2alpha`](https://github.com/Tencent/WeVisOne-VL/tree/mask2alpha) branch.
 - **[2026-10]** 🎉 We release the technical report, model weights (2B & 4B), inference package, Cookbooks, and evaluation pipeline!
 
@@ -210,6 +211,7 @@ from wevisone_vl import WeVisOneVL
 from wevisone_vl.visualization import save_result
 
 model = WeVisOneVL("tencent/WeVisOne-VL-4B", backend="transformers")  # or backend="vllm"
+# model = WeVisOneVL("tencent/WeVisOne-VL-2B", backend="transformers")  # Use 2B instead
 
 # Object-level: open-vocabulary detection
 image = Image.open("demo/examples/images/livingroom.jpg").convert("RGB")
@@ -267,12 +269,14 @@ save_result("outputs/matting", image, result)
 
 ## 🎮 Gradio Demo
 
-Try the hosted demo: https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b
+Try the hosted demo: [2B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-2b) / [4B](https://huggingface.co/spaces/hugging-apps/wevisone-vl-4b)
 
 Launch the demo locally:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python demo/app.py --model tencent/WeVisOne-VL-4B
+# Or use 2B:
+# CUDA_VISIBLE_DEVICES=0 python demo/app.py --model tencent/WeVisOne-VL-2B
 ```
 
 <details>
